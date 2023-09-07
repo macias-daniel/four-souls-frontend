@@ -1,0 +1,22 @@
+{
+  "name": "four-souls-frontend",
+  "version": "1.0.0",
+  "description": "Four Souls fan made game conversion / frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macias-daniel/four-souls-frontend.git"
+  },
+  "author": "Brandon Beccera & Daniel Macias",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/macias-daniel/four-souls-frontend/issues"
+  },
+  "homepage": "https://github.com/macias-daniel/four-souls-frontend#readme",
+  "dependencies": {
+    "pixi.js": "^7.2.4"
+  }
+}
