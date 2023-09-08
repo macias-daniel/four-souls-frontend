@@ -10,20 +10,51 @@ let app = new Application({
 
 document.body.appendChild(app.view)
 
+
+// Textures
 const CHARACTER_CARD_BACK = Texture.from("./assets/Character_Card.webp")
+const PLAYER_CHARACTER = Texture.from("./assets/character_issac.webp")
+const CHARACTER_ITEM = Texture.from("./assets/character_item_d6.webp")
 
+const CARD_SCALE = .15;
+
+// Player Board
 const playerBoard = new Container();
-
 app.stage.addChild(playerBoard);
 
 
-for (let i = 0; i < 3; i++) {
+// Player Character Cards
+const playerCharacterCards = new Container();
+playerBoard.addChild(playerCharacterCards)
 
-    const cardBack = new Sprite(CHARACTER_CARD_BACK)
-    cardBack.scale.set(.15)
-    cardBack.x = i * 10
-    playerBoard.addChild(cardBack)
-}
+const playerCharacter = new Sprite(PLAYER_CHARACTER)
+playerCharacter.scale.set(CARD_SCALE)
+
+const characterItem = new Sprite(CHARACTER_ITEM)
+characterItem.scale.set(CARD_SCALE)
+characterItem.y = 100
+
+playerCharacterCards.addChild(playerCharacter);
+playerCharacterCards.addChild(characterItem)
+
+
+// const cardBack = new Sprite(CHARACTER_CARD_BACK)
+
+
+
+// playerCharacterCards.addChild(cardBack)
+
+
+
+
+// for (let i = 0; i < 3; i++) {
+
+//     const cardBack = new Sprite(CHARACTER_CARD_BACK)
+//     cardBack.scale.set(.15)
+//     cardBack.x = i * 100
+//     playerBoard.addChild(cardBack)
+
+// }
 
 
 
