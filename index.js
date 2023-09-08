@@ -16,7 +16,8 @@ const CHARACTER_CARD_BACK = Texture.from("./assets/Character_Card.webp")
 const PLAYER_CHARACTER = Texture.from("./assets/character_issac.webp")
 const CHARACTER_ITEM = Texture.from("./assets/character_item_d6.webp")
 
-const CARD_SCALE = .15;
+const CARD_SCALE = .10
+const CARD_SCALE_MAX = .15
 
 // Player Board
 const playerBoard = new Container();
@@ -27,15 +28,40 @@ app.stage.addChild(playerBoard);
 const playerCharacterCards = new Container();
 playerBoard.addChild(playerCharacterCards)
 
-const playerCharacter = new Sprite(PLAYER_CHARACTER)
+const playerCharacter = new Sprite(CHARACTER_ITEM)
 playerCharacter.scale.set(CARD_SCALE)
+playerCharacter.eventMode = 'static'
+
+playerCharacter.on("mouseover", (event) => { growCardSize(playerCharacter) })
+playerCharacter.on("mouseleave", (event) => { shrinkCardSize(playerCharacter) })
 
 const characterItem = new Sprite(CHARACTER_ITEM)
 characterItem.scale.set(CARD_SCALE)
-characterItem.y = 100
+characterItem.eventMode = 'static'
+characterItem.y = 150
+
+characterItem.on("mouseover", (event) => { growCardSize(characterItem) })
+characterItem.on("mouseleave", (event) => { shrinkCardSize(characterItem) })
 
 playerCharacterCards.addChild(playerCharacter);
 playerCharacterCards.addChild(characterItem)
+
+playerCharacterCards.x = 20;
+playerCharacterCards.y = 20;
+
+
+const growCardSize = (cardSprite) => {
+    cardSprite.scale.set(CARD_SCALE_MAX)
+}
+
+const shrinkCardSize = (cardSprite) => {
+    cardSprite.scale.set(CARD_SCALE)
+}
+
+
+
+
+
 
 
 // const cardBack = new Sprite(CHARACTER_CARD_BACK)
