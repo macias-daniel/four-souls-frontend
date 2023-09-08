@@ -1,22 +1,18 @@
-// import { Application, Sprite } from 'pixi.js'
+const Application = PIXI.Application
 
-let app = new PIXI.Application({
-    width: 500, height: 500
+let app = new Application({
+    width: innerWidth,
+    height: innerHeight,
 });
 
-document.body.appendChild(app.view);
+document.body.appendChild(app.view)
 
 let sprite = PIXI.Sprite.from("./assets/Character_Card.webp")
-
-
-
+sprite.scale.set(.15);
 
 app.stage.addChild(sprite)
 
 
-let elapsed = 0.0;
-
 app.ticker.add((delta) => {
-    elapsed += delta;
 
 })
